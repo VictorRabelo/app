@@ -27,8 +27,8 @@ export class AuthService {
     return this.http.get(`${this.baseUrl}/oauth/logout`).toPromise();
   }
 
-  getUserByToken(queryParams: any = {}): Promise<any> {
-    return this.http.get(`${this.baseUrl}/oauth/me`, { params: queryParams }).toPromise();
+  async getUserByToken(): Promise<any> {
+    return await this.http.get(`${this.baseUrl}/oauth/me`).toPromise();
   }
 
   alterSenha(dados) {
